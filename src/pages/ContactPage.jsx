@@ -16,7 +16,7 @@ export const ContactPage = () => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
     setSubmitted(true);
-    addToast('Your message has been sent to TechVerse Support!', 'success');
+    addToast('Your message has been sent to BURAQA STAR Support!', 'success');
   };
 
   return (
@@ -25,7 +25,7 @@ export const ContactPage = () => {
         
         {/* Header */}
         <div className="text-center space-y-3">
-          <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Support Center</p>
+          <p className="text-xs font-semibold text-amber-500 uppercase tracking-widest">Support Center</p>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
             We're Here to Help
           </h1>
@@ -45,18 +45,18 @@ export const ContactPage = () => {
 
               <div className="space-y-6 text-sm">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-900 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                  <div className="w-10 h-10 bg-amber-50 dark:bg-amber-950/50 border border-amber-100 dark:border-amber-900 rounded-xl flex items-center justify-center text-amber-600 dark:text-amber-400 shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="font-semibold text-slate-900 dark:text-white block">Email Inquiries</span>
-                    <span className="text-slate-500 dark:text-slate-400 text-xs">support@techverse.io</span>
+                    <span className="text-slate-500 dark:text-slate-400 text-xs">support@buraqastar.ae</span>
                     <p className="text-[11px] text-slate-400 mt-0.5">Average reply time: under 2 hours</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-900 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                  <div className="w-10 h-10 bg-amber-50 dark:bg-amber-950/50 border border-amber-100 dark:border-amber-900 rounded-xl flex items-center justify-center text-amber-600 dark:text-amber-400 shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -67,12 +67,12 @@ export const ContactPage = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-900 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                  <div className="w-10 h-10 bg-amber-50 dark:bg-amber-950/50 border border-amber-100 dark:border-amber-900 rounded-xl flex items-center justify-center text-amber-600 dark:text-amber-400 shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="font-semibold text-slate-900 dark:text-white block">Main Office</span>
-                    <span className="text-slate-500 dark:text-slate-400 text-xs">TechVerse LLC, Level 14, Al Sa'ada Tower, Sheikh Zayed Road, Downtown Dubai, United Arab Emirates</span>
+                    <span className="text-slate-500 dark:text-slate-400 text-xs">BURAQA STAR COMPUTER TRADING LLC, Level 14, Al Sa'ada Tower, Sheikh Zayed Road, Downtown Dubai, United Arab Emirates</span>
                   </div>
                 </div>
               </div>

@@ -23,9 +23,13 @@ export const LoginPage = () => {
         
         {/* Brand */}
         <div className="text-center space-y-2">
-          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center mx-auto shadow-sm">
-            <span className="text-white font-bold text-base">T</span>
-          </div>
+          <Link to="/" className="inline-block hover:scale-105 transition-transform">
+            <img
+              src="/logo-emblem.png"
+              alt="BURAQA STAR"
+              className="h-12 w-auto mx-auto object-contain drop-shadow-sm"
+            />
+          </Link>
           <h2 className="font-heading font-bold text-2xl text-slate-900 dark:text-white">
             Welcome Back
           </h2>

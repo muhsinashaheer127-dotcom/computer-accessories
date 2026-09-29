@@ -12,7 +12,7 @@ export const NewsletterSection = () => {
     if (!email.trim()) return;
     setSubscribed(true);
     setEmail('');
-    addToast('You\'re subscribed to TechVerse updates!', 'success');
+    addToast('You\'re subscribed to BURAQA STAR updates!', 'success');
   };
 
   return (
@@ -21,16 +21,16 @@ export const NewsletterSection = () => {
         <div className="relative overflow-hidden rounded-3xl bg-slate-900 dark:bg-[#0d1424] border border-slate-800 dark:border-slate-700/60 p-10 sm:p-16 text-center">
 
           {/* Subtle bg */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/40 via-transparent to-indigo-950/30 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-blue-950/30 pointer-events-none" />
 
           <div className="relative max-w-xl mx-auto space-y-6">
             <div className="space-y-3">
-              <p className="text-xs font-semibold tracking-widest text-blue-400 uppercase">Newsletter</p>
+              <p className="text-xs font-semibold tracking-widest text-amber-400 uppercase">Newsletter</p>
               <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white tracking-tight">
                 Stay Updated
               </h2>
               <p className="text-slate-400 text-base leading-relaxed">
-                Get the latest products, exclusive offers and technology updates from TechVerse, delivered straight to your inbox.
+                Get the latest products, exclusive offers and technology updates from BURAQA STAR, delivered straight to your inbox.
               </p>
             </div>
 
@@ -44,12 +44,12 @@ export const NewsletterSection = () => {
                     placeholder="Enter your email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-white/10 border border-white/20 focus:border-blue-500 rounded-xl px-4 py-3 pl-10 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all"
+                    className="w-full bg-white/10 border border-white/20 focus:border-amber-500 rounded-xl px-4 py-3 pl-10 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30 transition-all"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-md text-sm"
+                  className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl transition-all shadow-md text-sm"
                 >
                   Subscribe <ArrowRight className="w-4 h-4" />
                 </button>
@@ -59,7 +59,7 @@ export const NewsletterSection = () => {
                 <div className="w-7 h-7 rounded-full bg-green-500/20 flex items-center justify-center">
                   <Check className="w-4 h-4 text-green-400" />
                 </div>
-                <span className="text-sm font-medium text-slate-200">You're subscribed! Welcome to TechVerse.</span>
+                <span className="text-sm font-medium text-slate-200">You're subscribed! Welcome to BURAQA STAR.</span>
               </div>
             )}
 

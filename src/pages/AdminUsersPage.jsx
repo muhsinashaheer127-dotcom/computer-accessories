@@ -8,7 +8,7 @@ export const AdminUsersPage = () => {
     {
       id: 'usr-1',
       name: 'Alexander Pierce',
-      email: 'alex.pierce@techverse.io',
+      email: 'alex.pierce@buraqastar.ae',
       role: 'user',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
       ordersCount: 4,

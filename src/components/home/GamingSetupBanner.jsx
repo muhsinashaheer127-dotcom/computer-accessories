@@ -22,14 +22,14 @@ export const GamingSetupBanner = () => {
 
             {/* Text Content */}
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/30 rounded-full px-3 py-1.5">
-                <span className="text-xs font-semibold text-blue-400 tracking-wide uppercase">Workspace Collection</span>
+              <div className="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 rounded-full px-3 py-1.5">
+                <span className="text-xs font-semibold text-amber-400 tracking-wide uppercase">Workspace Collection</span>
               </div>
 
               <div className="space-y-3">
                 <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white leading-snug tracking-tight">
                   Upgrade Your<br />
-                  <span className="text-blue-400">Workspace.</span>
+                  <span className="text-amber-400">Workspace.</span>
                 </h2>
                 <p className="text-slate-400 text-base leading-relaxed max-w-sm">
                   Thoughtfully designed technology for a cleaner, smarter and more productive working environment.
@@ -39,7 +39,7 @@ export const GamingSetupBanner = () => {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/shop"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all hover:-translate-y-0.5 shadow-md"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-md shadow-amber-500/20"
                 >
                   Explore Workspace <ArrowRight className="w-4 h-4" />
                 </Link>

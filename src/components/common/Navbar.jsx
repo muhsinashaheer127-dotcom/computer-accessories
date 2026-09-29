@@ -73,14 +73,21 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-16 gap-6">
 
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-2.5 shrink-0">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-sm font-heading">T</span>
+            {/* Brand Logo */}
+            <Link to="/" className="flex items-center gap-3 shrink-0 group">
+              <img
+                src="/logo-emblem.png"
+                alt="BURAQA STAR"
+                className="h-10 w-auto object-contain drop-shadow-sm group-hover:scale-105 transition-transform"
+              />
+              <div className="flex flex-col">
+                <span className="font-heading font-black text-lg text-slate-900 dark:text-white tracking-tight leading-none group-hover:text-amber-500 transition-colors">
+                  BURAQA <span className="text-amber-500">STAR</span>
+                </span>
+                <span className="text-[9px] sm:text-[10px] font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase mt-0.5">
+                  Computer Trading LLC
+                </span>
               </div>
-              <span className="font-heading font-bold text-lg text-slate-900 dark:text-white tracking-tight">
-                Tech<span className="text-blue-600">Verse</span>
-              </span>
             </Link>
 
             {/* Desktop Nav Links */}
@@ -88,7 +95,7 @@ export const Navbar = () => {
               <Link
                 to="/"
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${location.pathname === '/'
-                    ? 'text-blue-600 bg-blue-50 dark:bg-blue-900/20 dark:text-blue-400'
+                    ? 'text-amber-600 bg-amber-50 dark:bg-amber-950/40 dark:text-amber-400 font-semibold'
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
                   }`}
               >
@@ -98,7 +105,7 @@ export const Navbar = () => {
                 to="/shop"
                 onClick={() => setSelectedCategory('all')}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${location.pathname === '/shop'
-                    ? 'text-blue-600 bg-blue-50 dark:bg-blue-900/20 dark:text-blue-400'
+                    ? 'text-amber-600 bg-amber-50 dark:bg-amber-950/40 dark:text-amber-400 font-semibold'
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
                   }`}
               >
@@ -121,7 +128,7 @@ export const Navbar = () => {
                           key={item.cat}
                           to="/shop"
                           onClick={() => setSelectedCategory(item.cat)}
-                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-700 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-950/30 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
                         >
                           <Icon className="w-4 h-4 text-slate-400" />
                           {item.name}
@@ -154,7 +161,7 @@ export const Navbar = () => {
                   to="/"
                   className="hidden sm:flex items-center gap-1.5 px-3 py-2 mr-1 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                 >
-                  <ArrowLeft className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                  <ArrowLeft className="w-4 h-4 text-amber-500" />
                   Back to Site
                 </Link>
               )}
@@ -162,7 +169,7 @@ export const Navbar = () => {
               {isAdmin && !isAdminRoute && (
                 <Link
                   to="/admin"
-                  className="hidden sm:flex items-center gap-1.5 px-3 py-2 mr-1 rounded-xl text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors"
+                  className="hidden sm:flex items-center gap-1.5 px-3 py-2 mr-1 rounded-xl text-sm font-semibold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 hover:bg-amber-100 dark:hover:bg-amber-900/40 transition-colors"
                 >
                   <LayoutDashboard className="w-4 h-4" />
                   Admin Panel
@@ -185,7 +192,7 @@ export const Navbar = () => {
                 className="p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors"
                 title="Toggle theme"
               >
-                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {isDark ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5" />}
               </button>
 
               {/* Wishlist */}
@@ -196,7 +203,7 @@ export const Navbar = () => {
               >
                 <Heart className="w-5 h-5" />
                 {wishlist.length > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-blue-600 text-white font-bold text-[10px] rounded-full flex items-center justify-center">
+                  <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-amber-500 text-slate-950 font-black text-[10px] rounded-full flex items-center justify-center shadow-sm">
                     {wishlist.length}
                   </span>
                 )}
@@ -210,7 +217,7 @@ export const Navbar = () => {
               >
                 <ShoppingBag className="w-5 h-5" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-blue-600 text-white font-bold text-[10px] rounded-full flex items-center justify-center">
+                  <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-amber-500 text-slate-950 font-black text-[10px] rounded-full flex items-center justify-center shadow-sm">
                     {cartCount}
                   </span>
                 )}
@@ -224,7 +231,7 @@ export const Navbar = () => {
                       onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                       className="flex items-center gap-2 p-1 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors"
                     >
-                      <img src={user.avatar} alt={user.name} className="w-7 h-7 rounded-full object-cover ring-2 ring-slate-200 dark:ring-slate-700" />
+                      <img src={user.avatar} alt={user.name} className="w-7 h-7 rounded-full object-cover ring-2 ring-amber-500/40" />
                       <ChevronDown className="w-3.5 h-3.5 text-slate-400 hidden sm:block" />
                     </button>
 
@@ -234,14 +241,14 @@ export const Navbar = () => {
                           <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">{user.name}</p>
                           <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{user.email}</p>
                         </div>
-                        <Link to="/profile" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-blue-600">
+                        <Link to="/profile" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-slate-800 hover:text-amber-500">
                           <User className="w-4 h-4 text-slate-400" /> My Profile
                         </Link>
-                        <Link to="/orders" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-blue-600">
+                        <Link to="/orders" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-slate-800 hover:text-amber-500">
                           <Package className="w-4 h-4 text-slate-400" /> My Orders
                         </Link>
                         {isAdmin && (
-                          <Link to="/admin" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-blue-600 dark:text-blue-400 font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20">
+                          <Link to="/admin" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-amber-600 dark:text-amber-400 font-medium hover:bg-amber-50 dark:hover:bg-amber-900/20">
                             <LayoutDashboard className="w-4 h-4" /> Admin Panel
                           </Link>
                         )}
@@ -259,9 +266,9 @@ export const Navbar = () => {
                 ) : (
                   <Link
                     to="/login"
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors shadow-sm"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm transition-all shadow-sm hover:shadow-amber-500/20"
                   >
-                    <User className="w-4 h-4" />
+                    <User className="w-4 h-4 text-slate-950" />
                     <span className="hidden sm:inline">Sign In</span>
                   </Link>
                 )}

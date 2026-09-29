@@ -73,7 +73,7 @@ export const ProductDetailPage = () => {
           <div className="lg:col-span-7 space-y-4">
             <div className="relative aspect-[4/3] w-full rounded-3xl bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 p-8 flex items-center justify-center overflow-hidden shadow-sm">
               {product.discount > 0 && (
-                <span className="absolute top-4 left-4 z-10 px-3 py-1 bg-blue-600 text-white font-semibold text-xs rounded-lg shadow-sm">
+                <span className="absolute top-4 left-4 z-10 px-3 py-1 bg-amber-500 text-slate-950 font-bold text-xs rounded-lg shadow-sm">
                   -{product.discount}% OFF
                 </span>
               )}
@@ -93,7 +93,7 @@ export const ProductDetailPage = () => {
                     onClick={() => setSelectedImage(img)}
                     className={`w-20 h-20 rounded-2xl bg-white dark:bg-slate-800 border p-2 flex items-center justify-center shrink-0 transition-all ${
                       (selectedImage || product.image) === img
-                        ? 'border-blue-600 ring-2 ring-blue-600/20'
+                        ? 'border-amber-500 ring-2 ring-amber-500/30'
                         : 'border-slate-200 dark:border-slate-700 hover:border-slate-400'
                     }`}
                   >

@@ -2,16 +2,18 @@
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/logo-icon-square.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechVerse | Premium Technology. Smarter Setup.</title>
+    <meta name="description" content="BURAQA STAR COMPUTER TRADING LLC - Premier destination for high-performance computer accessories, computing devices, and workspace peripherals in the UAE." />
+    <title>BURAQA STAR COMPUTER TRADING LLC | Premium Technology & Accessories</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
       (function() {
         try {
-          const theme = localStorage.getItem('techverse_theme');
+          const theme = localStorage.getItem('buraqastar_theme') || localStorage.getItem('techverse_theme');
           if (theme === 'light') {
             document.documentElement.classList.remove('dark');
             document.documentElement.classList.add('light');
@@ -29,7 +31,7 @@
       })();
     </script>
   </head>
-  <body class="bg-slate-50 dark:bg-[#090d16] text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white min-h-screen transition-colors duration-200">
+  <body class="bg-slate-50 dark:bg-[#080b11] text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950 min-h-screen transition-colors duration-200">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

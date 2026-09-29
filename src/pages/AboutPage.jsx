@@ -10,14 +10,28 @@ export const AboutPage = () => {
         {/* Hero Banner */}
         <div className="relative rounded-3xl bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 p-8 sm:p-16 text-center overflow-hidden shadow-sm">
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-900 text-blue-600 dark:text-blue-400 text-xs font-semibold">
-              <Sparkles className="w-3.5 h-3.5" /> About TechVerse
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-900/60 text-amber-700 dark:text-amber-400 text-xs font-semibold">
+              <Sparkles className="w-3.5 h-3.5" /> About BURAQA STAR
             </div>
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-slate-900 dark:text-white tracking-tight leading-tight">
-              Premium Technology. <span className="text-blue-600 dark:text-blue-400">Smarter Setup.</span>
+
+            <div className="flex justify-center my-2">
+              <img
+                src="/logo-buraqa-dark.png"
+                alt="BURAQA STAR COMPUTER TRADING LLC"
+                className="h-20 sm:h-24 w-auto object-contain hidden dark:block drop-shadow-md"
+              />
+              <img
+                src="/logo-buraqa-light.png"
+                alt="BURAQA STAR COMPUTER TRADING LLC"
+                className="h-20 sm:h-24 w-auto object-contain block dark:hidden drop-shadow-sm"
+              />
+            </div>
+
+            <h1 className="font-heading font-extrabold text-2xl sm:text-4xl text-slate-900 dark:text-white tracking-tight leading-tight uppercase">
+              BURAQA STAR <span className="text-amber-500">COMPUTER TRADING LLC</span>
             </h1>
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-              TechVerse is the United Arab Emirates' dedicated technology destination for professional workspace accessories, high-performance computing devices, and thoughtfully engineered peripherals. Headquartered in Dubai, we serve professionals and modern businesses across all 7 Emirates.
+              BURAQA STAR COMPUTER TRADING LLC is the United Arab Emirates' premier technology destination for professional workspace accessories, high-performance computing devices, and thoughtfully engineered peripherals. Headquartered in Dubai, we serve professionals and modern businesses across all 7 Emirates.
             </p>
           </div>
         </div>

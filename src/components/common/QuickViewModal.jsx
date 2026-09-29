@@ -48,7 +48,7 @@ export const QuickViewModal = () => {
               className="max-h-72 w-full object-contain"
             />
             {quickViewProduct.discount > 0 && (
-              <span className="absolute top-4 left-4 px-2.5 py-1 bg-blue-600 text-white text-xs font-semibold rounded-lg">
+              <span className="absolute top-4 left-4 px-2.5 py-1 bg-amber-500 text-slate-950 text-xs font-bold rounded-lg shadow-sm">
                 -{quickViewProduct.discount}% OFF
               </span>
             )}
@@ -57,7 +57,7 @@ export const QuickViewModal = () => {
           {/* Details */}
           <div className="p-8 flex flex-col gap-5">
             <div className="space-y-2">
-              <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest">{quickViewProduct.brand}</p>
+              <p className="text-xs font-semibold text-amber-500 uppercase tracking-widest">{quickViewProduct.brand}</p>
               <h2 className="font-heading font-bold text-xl text-slate-900 dark:text-white leading-snug">
                 {quickViewProduct.name}
               </h2>
@@ -126,16 +126,16 @@ export const QuickViewModal = () => {
               <button
                 onClick={handleAddToCart}
                 disabled={quickViewProduct.stock === 0}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:bg-slate-200 dark:disabled:bg-slate-700 text-white disabled:text-slate-400 font-semibold transition-all shadow-sm text-sm"
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 disabled:bg-slate-200 dark:disabled:bg-slate-700 text-slate-950 font-bold disabled:text-slate-400 transition-all shadow-sm shadow-amber-500/20 text-sm"
               >
-                <ShoppingBag className="w-4 h-4" />
+                <ShoppingBag className="w-4 h-4 text-slate-950" />
                 {quickViewProduct.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
               </button>
 
               <Link
                 to={`/product/${quickViewProduct.id}`}
                 onClick={() => setQuickViewProduct(null)}
-                className="block text-center text-sm text-blue-600 dark:text-blue-400 font-medium hover:underline"
+                className="block text-center text-sm text-amber-500 dark:text-amber-400 font-medium hover:underline"
               >
                 View full details →
               </Link>
@@ -149,7 +149,7 @@ export const QuickViewModal = () => {
                 { icon: RotateCcw, label: '14-day hassle-free return policy' },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2">
-                  <Icon className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                  <Icon className="w-3.5 h-3.5 text-amber-500 shrink-0" />
                   <span>{label}</span>
                 </div>
               ))}

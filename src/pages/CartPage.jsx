@@ -14,11 +14,12 @@ export const CartPage = () => {
 
   const handleApplyCoupon = (e) => {
     e.preventDefault();
-    if (couponCode.toUpperCase() === 'TECHVERSE10') {
+    const code = couponCode.toUpperCase();
+    if (code === 'BURAQA10' || code === 'TECHVERSE10') {
       setDiscountPercent(10);
-      addToast('Coupon "TECHVERSE10" applied! 10% discount added.', 'success');
+      addToast('Coupon "BURAQA10" applied! 10% discount added.', 'success');
     } else {
-      addToast('Invalid coupon code. Try "TECHVERSE10"', 'error');
+      addToast('Invalid coupon code. Try "BURAQA10"', 'error');
     }
   };
 
@@ -145,7 +146,7 @@ export const CartPage = () => {
                 <button type="submit" className="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-colors">Apply</button>
               </form>
               {discountPercent === 0 && (
-                <p className="text-xs text-slate-400 dark:text-slate-500">Try: <span className="font-mono text-blue-500">TECHVERSE10</span></p>
+                <p className="text-xs text-slate-400 dark:text-slate-500">Try: <span className="font-mono text-amber-500 font-semibold">BURAQA10</span></p>
               )}
 
               {/* Price Breakdown */}

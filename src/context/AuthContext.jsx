@@ -9,10 +9,10 @@ export const AuthProvider = ({ children }) => {
 
   const [user, setUser] = useState(() => {
     try {
-      const savedUser = localStorage.getItem('techverse_user');
+      const savedUser = localStorage.getItem('buraqastar_user') || localStorage.getItem('techverse_user');
       return savedUser ? JSON.parse(savedUser) : {
         name: 'Alexander Pierce',
-        email: 'alex.pierce@techverse.io',
+        email: 'alex.pierce@buraqastar.ae',
         role: 'user',
         avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
         phone: '+971 50 123 4567',
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
 
   const [isAdmin, setIsAdmin] = useState(() => {
     try {
-      const savedUser = localStorage.getItem('techverse_user');
+      const savedUser = localStorage.getItem('buraqastar_user') || localStorage.getItem('techverse_user');
       if (!savedUser) return false;
       const parsed = JSON.parse(savedUser);
       return isSuperAdminEmail(parsed.email);
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
 
   const [orders, setOrders] = useState(() => {
     try {
-      const savedOrders = localStorage.getItem('techverse_orders');
+      const savedOrders = localStorage.getItem('buraqastar_orders') || localStorage.getItem('techverse_orders');
       return savedOrders ? JSON.parse(savedOrders) : [
         {
           id: 'ORD-89241',
@@ -75,12 +75,12 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      localStorage.setItem('techverse_user', JSON.stringify(user));
+      localStorage.setItem('buraqastar_user', JSON.stringify(user));
     }
   }, [user]);
 
   useEffect(() => {
-    localStorage.setItem('techverse_orders', JSON.stringify(orders));
+    localStorage.setItem('buraqastar_orders', JSON.stringify(orders));
   }, [orders]);
 
   const login = (email, password) => {
@@ -107,7 +107,7 @@ export const AuthProvider = ({ children }) => {
 
     const mockUser = {
       name: 'Alexander Pierce',
-      email: normalizedEmail || 'alex.pierce@techverse.io',
+      email: normalizedEmail || 'alex.pierce@buraqastar.ae',
       role: 'user',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
       phone: '+971 50 123 4567',
@@ -148,8 +148,9 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     setIsAdmin(false);
+    localStorage.removeItem('buraqastar_user');
     localStorage.removeItem('techverse_user');
-    addToast('Logged out of TechVerse', 'info');
+    addToast('Logged out of BURAQA STAR', 'info');
   };
 
   useEffect(() => {

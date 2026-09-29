@@ -10,7 +10,7 @@ export const ShopProvider = ({ children }) => {
   // Load cart from LocalStorage
   const [cart, setCart] = useState(() => {
     try {
-      const savedCart = localStorage.getItem('techverse_cart');
+      const savedCart = localStorage.getItem('buraqastar_cart') || localStorage.getItem('techverse_cart');
       return savedCart ? JSON.parse(savedCart) : [];
     } catch (e) {
       return [];
@@ -20,7 +20,7 @@ export const ShopProvider = ({ children }) => {
   // Load wishlist from LocalStorage
   const [wishlist, setWishlist] = useState(() => {
     try {
-      const savedWishlist = localStorage.getItem('techverse_wishlist');
+      const savedWishlist = localStorage.getItem('buraqastar_wishlist') || localStorage.getItem('techverse_wishlist');
       return savedWishlist ? JSON.parse(savedWishlist) : [];
     } catch (e) {
       return [];
@@ -40,11 +40,11 @@ export const ShopProvider = ({ children }) => {
 
   // Sync to LocalStorage
   useEffect(() => {
-    localStorage.setItem('techverse_cart', JSON.stringify(cart));
+    localStorage.setItem('buraqastar_cart', JSON.stringify(cart));
   }, [cart]);
 
   useEffect(() => {
-    localStorage.setItem('techverse_wishlist', JSON.stringify(wishlist));
+    localStorage.setItem('buraqastar_wishlist', JSON.stringify(wishlist));
   }, [wishlist]);
 
   // Cart operations

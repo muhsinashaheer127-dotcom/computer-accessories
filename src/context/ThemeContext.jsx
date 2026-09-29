@@ -4,7 +4,7 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
-    const saved = localStorage.getItem('techverse_theme');
+    const saved = localStorage.getItem('buraqastar_theme') || localStorage.getItem('techverse_theme');
     if (saved) return saved === 'dark';
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
@@ -20,7 +20,7 @@ export const ThemeProvider = ({ children }) => {
       root.classList.add('light');
       root.style.colorScheme = 'light';
     }
-    localStorage.setItem('techverse_theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('buraqastar_theme', isDark ? 'dark' : 'light');
   }, [isDark]);
 
   const toggleTheme = () => setIsDark((prev) => !prev);

@@ -25,13 +25,17 @@ export const RegisterPage = () => {
       <div className="w-full max-w-md bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 rounded-3xl p-8 shadow-sm space-y-6">
         
         <div className="text-center space-y-2">
-          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center mx-auto shadow-sm">
-            <span className="text-white font-bold text-base">T</span>
-          </div>
+          <Link to="/" className="inline-block hover:scale-105 transition-transform">
+            <img
+              src="/logo-emblem.png"
+              alt="BURAQA STAR"
+              className="h-12 w-auto mx-auto object-contain drop-shadow-sm"
+            />
+          </Link>
           <h2 className="font-heading font-bold text-2xl text-slate-900 dark:text-white">
             Create an Account
           </h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400">Join TechVerse for seamless orders and member benefits</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Join BURAQA STAR for seamless orders and member benefits</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

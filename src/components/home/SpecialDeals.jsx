@@ -38,8 +38,8 @@ export const SpecialDeals = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <Tag className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-              <p className="text-xs font-semibold tracking-widest text-blue-600 dark:text-blue-400 uppercase">Limited Time</p>
+              <Tag className="w-4 h-4 text-amber-500" />
+              <p className="text-xs font-semibold tracking-widest text-amber-500 uppercase">Limited Time</p>
             </div>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
               Exclusive Deals

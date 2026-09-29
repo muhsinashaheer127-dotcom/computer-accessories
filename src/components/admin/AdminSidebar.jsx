@@ -24,12 +24,16 @@ export const AdminSidebar = () => {
         
         {/* Brand Admin Logo */}
         <div className="flex items-center gap-2.5 px-2">
-          <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-sm">
-            <span className="font-heading font-bold text-sm">T</span>
-          </div>
+          <img
+            src="/logo-emblem.png"
+            alt="BURAQA STAR"
+            className="w-8 h-8 object-contain"
+          />
           <div>
-            <h2 className="font-heading font-bold text-base text-slate-900 dark:text-white">Tech<span className="text-blue-600">Verse</span></h2>
-            <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Administration</p>
+            <h2 className="font-heading font-black text-base text-slate-900 dark:text-white leading-tight">
+              BURAQA <span className="text-amber-500">STAR</span>
+            </h2>
+            <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Trading LLC · Admin</p>
           </div>
         </div>
 

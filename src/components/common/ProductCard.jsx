@@ -15,7 +15,7 @@ export const ProductCard = ({ product, showDealBadge }) => {
 
   return (
     <div
-      className="group relative flex flex-col bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 rounded-2xl overflow-hidden hover:border-blue-200 dark:hover:border-blue-700/60 hover:shadow-lg dark:hover:shadow-slate-900/60 transition-all duration-300"
+      className="group relative flex flex-col bg-white dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 rounded-2xl overflow-hidden hover:border-amber-400 dark:hover:border-amber-500/50 hover:shadow-lg dark:hover:shadow-amber-500/5 transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -32,7 +32,7 @@ export const ProductCard = ({ product, showDealBadge }) => {
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5">
           {hasDiscount && (
-            <span className="px-2 py-0.5 bg-blue-600 text-white text-[11px] font-semibold rounded-md">
+            <span className="px-2 py-0.5 bg-amber-500 text-slate-950 text-[11px] font-bold rounded-md shadow-sm">
               -{product.discount}%
             </span>
           )}
@@ -42,7 +42,7 @@ export const ProductCard = ({ product, showDealBadge }) => {
             </span>
           )}
           {product.stock <= 5 && product.stock > 0 && (
-            <span className="px-2 py-0.5 bg-amber-500 text-white text-[11px] font-semibold rounded-md">
+            <span className="px-2 py-0.5 bg-amber-600 text-white text-[11px] font-semibold rounded-md">
               Low Stock
             </span>
           )}
@@ -64,7 +64,7 @@ export const ProductCard = ({ product, showDealBadge }) => {
         {isHovered && (
           <button
             onClick={() => setQuickViewProduct(product)}
-            className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 shadow-md hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all"
+            className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 shadow-md hover:bg-amber-50 dark:hover:bg-slate-800 hover:text-amber-500 transition-all"
           >
             <Eye className="w-3.5 h-3.5" /> Quick View
           </button>
@@ -74,9 +74,9 @@ export const ProductCard = ({ product, showDealBadge }) => {
       {/* Content */}
       <div className="flex flex-col flex-1 p-4 space-y-3">
         <div className="space-y-1">
-          <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide">{product.brand}</p>
+          <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wide">{product.brand}</p>
           <Link to={`/product/${product.id}`} className="group/title">
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-white leading-snug line-clamp-2 group-hover/title:text-blue-600 dark:group-hover/title:text-blue-400 transition-colors">
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-white leading-snug line-clamp-2 group-hover/title:text-amber-500 transition-colors">
               {product.name}
             </h3>
           </Link>
@@ -115,9 +115,9 @@ export const ProductCard = ({ product, showDealBadge }) => {
         <button
           onClick={() => addToCart(product, 1)}
           disabled={product.stock === 0}
-          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:bg-slate-200 dark:disabled:bg-slate-700 text-white disabled:text-slate-400 text-sm font-semibold transition-all duration-200 disabled:cursor-not-allowed shadow-sm hover:shadow-md"
+          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 disabled:bg-slate-200 dark:disabled:bg-slate-700 text-slate-950 font-bold disabled:text-slate-400 text-sm transition-all duration-200 disabled:cursor-not-allowed shadow-sm hover:shadow-md hover:shadow-amber-500/20"
         >
-          <ShoppingBag className="w-4 h-4" />
+          <ShoppingBag className="w-4 h-4 text-slate-950" />
           {product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
         </button>
       </div>

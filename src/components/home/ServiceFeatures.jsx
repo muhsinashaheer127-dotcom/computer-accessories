@@ -47,9 +47,9 @@ export const ServiceFeatures = () => {
 
         {/* Header */}
         <div className="text-center mb-14 space-y-3">
-          <p className="text-xs font-semibold tracking-widest text-blue-600 dark:text-blue-400 uppercase">Our Promise</p>
+          <p className="text-xs font-semibold tracking-widest text-amber-500 uppercase">Our Promise</p>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
-            Why Shop with TechVerse?
+            Why Shop with BURAQA STAR?
           </h2>
           <p className="text-slate-500 dark:text-slate-400 text-base max-w-xl mx-auto">
             We're committed to providing you with the best technology shopping experience in the UAE.

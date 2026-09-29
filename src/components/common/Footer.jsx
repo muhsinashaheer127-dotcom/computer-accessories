@@ -39,7 +39,7 @@ const FacebookIcon = (props) => (
 );
 
 const FOOTER_LINKS = {
-  TechVerse: [
+  'BURAQA STAR': [
     { label: 'About Us', href: '/about' },
     { label: 'Our Story', href: '/about' },
     { label: 'Contact Us', href: '/contact' },
@@ -84,25 +84,32 @@ export const Footer = () => {
 
           {/* Brand Column */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-2 space-y-5">
-            <Link to="/" className="inline-flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">T</span>
+            <Link to="/" className="inline-flex flex-col gap-2 group">
+              <img
+                src="/logo-buraqa-dark.png"
+                alt="BURAQA STAR COMPUTER TRADING LLC"
+                className="h-14 w-auto object-contain self-start drop-shadow-md group-hover:scale-105 transition-transform"
+              />
+              <div>
+                <span className="font-heading font-black text-xl text-white tracking-tight">
+                  BURAQA <span className="text-amber-400">STAR</span>
+                </span>
+                <span className="text-[11px] font-semibold text-slate-400 tracking-wider uppercase block">
+                  Computer Trading LLC
+                </span>
               </div>
-              <span className="font-heading font-bold text-xl text-white">
-                Tech<span className="text-blue-400">Verse</span>
-              </span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              Premium technology accessories for work, creativity, and modern workstations. Trusted by customers across Dubai, Abu Dhabi, and all 7 Emirates.
+              BURAQA STAR COMPUTER TRADING LLC is your trusted destination for premium computer accessories, peripherals, and high-performance computing setups across Dubai, Abu Dhabi, and all 7 Emirates.
             </p>
 
             {/* Trust badges */}
             <div className="flex flex-wrap gap-3 text-xs text-slate-400">
               <div className="flex items-center gap-1.5 bg-slate-800 px-3 py-1.5 rounded-lg">
-                <Shield className="w-3.5 h-3.5 text-blue-400" /> UAE Official Warranty
+                <Shield className="w-3.5 h-3.5 text-amber-400" /> UAE Official Warranty
               </div>
               <div className="flex items-center gap-1.5 bg-slate-800 px-3 py-1.5 rounded-lg">
-                <Truck className="w-3.5 h-3.5 text-blue-400" /> Fast Delivery Across UAE
+                <Truck className="w-3.5 h-3.5 text-amber-400" /> Fast Delivery Across UAE
               </div>
             </div>
 
@@ -113,7 +120,7 @@ export const Footer = () => {
                   key={label}
                   href={href}
                   title={label}
-                  className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-blue-600 flex items-center justify-center text-slate-400 hover:text-white transition-all"
+                  className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-amber-500 hover:text-slate-900 flex items-center justify-center text-slate-400 transition-all"
                 >
                   <Icon />
                 </a>
@@ -144,7 +151,7 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-14 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} TechVerse LLC (Dubai, UAE). All rights reserved.</p>
+          <p>© {new Date().getFullYear()} BURAQA STAR COMPUTER TRADING LLC (Dubai, UAE). All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <span className="text-slate-500">Accepted Payments:</span>
             {['Visa', 'Mastercard', 'Apple Pay', 'Tabby', 'Cash on Delivery'].map((pm) => (
