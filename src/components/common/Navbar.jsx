@@ -113,33 +113,32 @@ export const Navbar = () => {
               </Link>
 
               {/* Categories Dropdown */}
-              <div className="relative" onMouseEnter={() => setIsCategoryMenuOpen(true)} onMouseLeave={() => setIsCategoryMenuOpen(false)}>
-                <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all">
+              <div className="relative group">
+                <Link
+                  to="/shop"
+                  onClick={() => setSelectedCategory('all')}
+                  className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all"
+                >
                   Categories
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isCategoryMenuOpen ? 'rotate-180' : ''}`} />
-                </button>
+                  <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
+                </Link>
 
-                {isCategoryMenuOpen && (
-                  <div className="absolute left-0 top-full mt-1 w-56 bg-white dark:bg-[#070d18] border border-slate-200 dark:border-cyan-500/20 rounded-2xl shadow-2xl shadow-cyan-500/10 p-2 z-50">
-                    {/* Corner decoration */}
-                    <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-cyan-300 dark:border-cyan-500/40 rounded-tl-2xl" />
-                    <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-cyan-300 dark:border-cyan-500/40 rounded-br-2xl" />
-                    {categories.map((item) => {
-                      const Icon = item.icon;
-                      return (
-                        <Link
-                          key={item.cat}
-                          to="/shop"
-                          onClick={() => setSelectedCategory(item.cat)}
-                          className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-600 dark:text-slate-400 hover:bg-cyan-100 dark:hover:bg-cyan-500/10 hover:text-cyan-600 dark:hover:text-cyan-300 transition-all group"
-                        >
-                          <Icon className="w-4 h-4 text-slate-400 dark:text-slate-600 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors" />
-                          {item.name}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                )}
+                <div className="absolute left-0 top-full mt-0 w-56 bg-white dark:bg-[#070d18] border border-slate-200 dark:border-cyan-500/20 rounded-2xl shadow-2xl shadow-cyan-500/10 p-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  {categories.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.cat}
+                        to="/shop"
+                        onClick={() => setSelectedCategory(item.cat)}
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-600 dark:text-slate-400 hover:bg-cyan-100 dark:hover:bg-cyan-500/10 hover:text-cyan-600 dark:hover:text-cyan-300 transition-all group"
+                      >
+                        <Icon className="w-4 h-4 text-slate-400 dark:text-slate-600 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors" />
+                        {item.name}
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
 
               <Link to="/about" className={navLinkClass('/about')}>About</Link>
