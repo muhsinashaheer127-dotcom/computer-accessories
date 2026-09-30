@@ -1,86 +1,207 @@
 @import "tailwindcss";
 
 @theme {
-  --color-blue-50: #fffbeb;
-  --color-blue-100: #fef3c7;
-  --color-blue-200: #fde68a;
-  --color-blue-300: #fcd34d;
-  --color-blue-400: #fbbf24;
-  --color-blue-500: #ffae00;
-  --color-blue-600: #f59e0b;
-  --color-blue-700: #d97706;
-  --color-blue-800: #b45309;
-  --color-blue-900: #78350f;
-  --color-blue-950: #451a03;
+  /* Futuristic Cyan/Violet Palette */
+  --color-cyan-50: #ecfeff;
+  --color-cyan-100: #cffafe;
+  --color-cyan-200: #a5f3fc;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #0891b2;
+  --color-cyan-700: #0e7490;
+  --color-cyan-800: #155e75;
+  --color-cyan-900: #164e63;
 
-  --color-brand-gold: #ffae00;
-  --color-brand-gold-light: #ffc94d;
-  --color-brand-gold-dark: #d97706;
+  --color-violet-50: #f5f3ff;
+  --color-violet-100: #ede9fe;
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7c3aed;
+  --color-violet-700: #6d28d9;
+
+  --color-brand-cyan: #06b6d4;
+  --color-brand-violet: #8b5cf6;
+  --color-brand-glow: #22d3ee;
+
+  /* Dark Space Backgrounds */
+  --color-space-950: #020408;
+  --color-space-900: #050a10;
+  --color-space-800: #070d15;
+  --color-space-700: #0a1220;
+  --color-space-600: #0d1828;
+
+  /* Light Mode Backgrounds */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer utilities {
   .font-display {
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
   }
   .font-heading {
-    font-family: 'Manrope', 'Inter', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+  }
+  .font-mono-futuristic {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
   }
 
-  /* Aliasing old font classes to new elegant typography */
+  /* Legacy font aliases */
   .font-orbitron {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: -0.02em;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.025em;
   }
   .font-rajdhani {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
-  /* Minimal card elevation */
+  /* Futuristic card */
   .tech-card {
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .tech-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 32px -8px rgba(245, 158, 11, 0.15);
-  }
-  .dark .tech-card:hover {
-    box-shadow: 0 16px 32px -8px rgba(255, 174, 0, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.25), 0 20px 40px -10px rgba(0, 0, 0, 0.4);
   }
 
+  /* Cyan glow text */
   .text-gradient-tech {
-    background: linear-gradient(135deg, #0f172a 0%, #d97706 100%);
+    background: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  .dark .text-gradient-tech {
-    background: linear-gradient(135deg, #ffffff 0%, #ffae00 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+  /* Glow border utility */
+  .glow-border-cyan {
+    box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.3), 0 0 20px rgba(6, 182, 212, 0.1);
+  }
+  .glow-border-violet {
+    box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.3), 0 0 20px rgba(139, 92, 246, 0.1);
+  }
+
+  /* Scanning line animation */
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.6), transparent);
+    animation: scan 3s linear infinite;
+  }
+  @keyframes scan {
+    0% { top: -5%; }
+    100% { top: 105%; }
+  }
+
+  /* Pulse glow */
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  /* Grid overlay */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .light .grid-bg {
+    background-image:
+      linear-gradient(rgba(6, 182, 212, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.08) 1px, transparent 1px);
+  }
+
+  /* Corner accent */
+  .corner-accent {
+    position: relative;
+  }
+  .corner-accent::before,
+  .corner-accent::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: rgba(6, 182, 212, 0.6);
+    border-style: solid;
+  }
+  .corner-accent::before {
+    top: -1px;
+    left: -1px;
+    border-width: 1px 0 0 1px;
+  }
+  .corner-accent::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 1px 1px 0;
   }
 }
 
-/* Custom Minimal Scrollbar */
+/* Custom Futuristic Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #050a10;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #0e7490;
   border-radius: 9999px;
 }
-.dark ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-}
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffae00;
+  background: #06b6d4;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
   overflow-x: hidden;
+  background: #050a10;
 }
+
+/* Light Mode Overrides */
+.light body {
+  background: #f8fafc;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Scan line keyframe — used in HeroSection, cards */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(2000%); }
+}
+

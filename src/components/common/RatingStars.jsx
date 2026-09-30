@@ -16,8 +16,8 @@ export const RatingStars = ({ rating = 5, reviewsCount, size = 'sm' }) => {
               i < full
                 ? 'fill-amber-400 text-amber-400'
                 : i === full && partial >= 0.5
-                ? 'fill-amber-200 text-amber-400'
-                : 'fill-slate-200 dark:fill-slate-600 text-slate-200 dark:text-slate-600'
+                ? 'fill-amber-300 text-amber-400'
+                : 'fill-slate-700 text-slate-700'
             }`}
           />
         ))}

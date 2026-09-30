@@ -34,26 +34,25 @@ export const FeaturedCategories = () => {
   const { setSelectedCategory } = useShop();
 
   return (
-    <section className="py-20 bg-slate-50 dark:bg-[#0d1220]">
+    <section className="py-20 bg-slate-50 dark:bg-[#050a10]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div className="space-y-2">
-            <p className="text-xs font-semibold tracking-widest text-blue-600 dark:text-blue-400 uppercase">Browse</p>
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
-              Shop by Category
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white">
+              Browse Categories
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 text-base max-w-md">
-              Explore our full range of premium computer accessories and technology.
+            <p className="text-slate-600 dark:text-slate-400 text-base">
+              Find exactly what you need for your setup
             </p>
           </div>
           <Link
             to="/shop"
             onClick={() => setSelectedCategory('all')}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:gap-3 transition-all shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors group"
           >
-            View all categories <ArrowRight className="w-4 h-4" />
+            View all <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
@@ -64,28 +63,19 @@ export const FeaturedCategories = () => {
               key={cat.id}
               to="/shop"
               onClick={() => setSelectedCategory(cat.id)}
-              className="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 hover:border-blue-200 dark:hover:border-blue-700/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-slate-900/60"
+              className="group bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 hover:border-cyan-500 dark:hover:border-cyan-500/50 hover:shadow-lg transition-all duration-300"
             >
-              {/* Product Image */}
-              <div className="relative h-36 overflow-hidden bg-slate-100 dark:bg-slate-700/50">
+              <div className="relative h-32 mb-3 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800">
                 <img
                   src={CATEGORY_IMAGES[cat.id] || cat.image}
                   alt={cat.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
-
-              {/* Label */}
-              <div className="p-3">
-                <p className="font-semibold text-sm text-slate-900 dark:text-white">{cat.name}</p>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-1">
-                  {CATEGORY_DESCRIPTIONS[cat.id] || `${cat.count} products`}
-                </p>
-                <span className="text-[11px] text-blue-600 dark:text-blue-400 font-medium mt-1 block">
-                  {cat.count} items →
-                </span>
-              </div>
+              <h3 className="font-semibold text-sm text-slate-900 dark:text-white mb-1">{cat.name}</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                {CATEGORY_DESCRIPTIONS[cat.id] || `${cat.count} products`}
+              </p>
             </Link>
           ))}
         </div>

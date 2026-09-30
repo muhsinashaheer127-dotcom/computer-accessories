@@ -10,26 +10,25 @@ export const TrendingProducts = () => {
   const featured = PRODUCTS.filter((p) => p.isFeatured).slice(0, 8);
 
   return (
-    <section className="py-20 bg-white dark:bg-[#090d16]">
+    <section className="py-20 bg-slate-50 dark:bg-[#050a10]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div className="space-y-2">
-            <p className="text-xs font-semibold tracking-widest text-blue-600 dark:text-blue-400 uppercase">Our Selection</p>
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white">
               Featured Products
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 text-base max-w-md">
-              Carefully curated technology that meets the highest standards of performance and design.
+            <p className="text-slate-600 dark:text-slate-400 text-base max-w-md">
+              Carefully curated technology that meets the highest standards
             </p>
           </div>
           <Link
             to="/shop"
             onClick={() => setSelectedCategory('all')}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:gap-3 transition-all shrink-0"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors group"
           >
-            View all products <ArrowRight className="w-4 h-4" />
+            View all <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 

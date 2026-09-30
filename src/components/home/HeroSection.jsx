@@ -1,129 +1,155 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ShoppingBag, Shield, Cpu, ArrowRight, Sparkles } from 'lucide-react';
+import { ShoppingBag, ArrowRight, Star, Truck, ShieldCheck } from 'lucide-react';
 import { useShop } from '../../context/ShopContext';
 
 export const HeroSection = () => {
   const { setSelectedCategory } = useShop();
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 md:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-[#08090e] dark:via-[#0d0e1a] dark:to-[#08090e] transition-colors duration-300">
-
-      {/* Background Neon Glowing Orbs */}
-      <div className="absolute top-10 left-1/4 w-96 h-96 bg-amber-500/15 dark:bg-amber-500/20 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-yellow-500/10 dark:bg-amber-600/15 blur-[140px] rounded-full pointer-events-none" />
-
-      {/* Grid Pattern Overlay */}
-      <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(rgba(245, 158, 11, 0.4) 1px, transparent 1px)`,
-          backgroundSize: '32px 32px'
-        }}
-      />
+    <section className="relative overflow-hidden bg-white dark:bg-[#050a10]">
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-[#050a10] dark:via-[#0a1220] dark:to-[#050a10]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[90vh] py-16 lg:py-24">
 
           {/* Left Content Column */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-7 space-y-6 text-center lg:text-left"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="space-y-8"
           >
-            {/* Tag Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-semibold tracking-wider uppercase backdrop-blur-md shadow-sm">
-              <Sparkles className="w-4 h-4 text-amber-500 animate-pulse" />
-              <span>BURAQA STAR COMPUTER TRADING LLC</span>
-            </div>
+            {/* Trust Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700"
+            >
+              <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Trusted by 10,000+ customers</span>
+            </motion.div>
 
             {/* Main Headline */}
-            <h1 className="font-orbitron font-black text-4xl sm:text-6xl xl:text-7xl tracking-tight text-slate-900 dark:text-white uppercase leading-[1.05]">
-              UPGRADE YOUR <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-amber-450 to-yellow-400 dark:from-amber-350">
-                DIGITAL EXPERIENCE
+            <h1 className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-slate-900 dark:text-white leading-tight">
+              Premium{' '}
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent">
+                  Computer
+                </span>
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+                  <path d="M2 10C50 2 150 2 198 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
+                  <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#06b6d4"/>
+                      <stop offset="100%" stopColor="#8b5cf6"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
               </span>
+              <br />
+              Accessories
             </h1>
 
             {/* Subtitle */}
-            <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              Premium computer accessories designed for work, creativity and everyday productivity.
-              Discover reliable technology, thoughtful design and smarter solutions for your digital setup.
+            <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+              Elevate your workspace with premium-quality accessories. Fast shipping across UAE, genuine products, and exceptional customer service.
             </p>
 
-            {/* Call To Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link
                 to="/shop"
                 onClick={() => setSelectedCategory('all')}
-                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-400 hover:to-amber-600 text-slate-950 font-orbitron font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-3 shadow-xl shadow-amber-500/20 hover:scale-105 transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2"
               >
-                <ShoppingBag className="w-5 h-5 text-slate-950" /> SHOP ACCESSORIES
+                <ShoppingBag className="w-5 h-5" />
+                Shop Now
               </Link>
 
               <Link
                 to="/shop"
                 onClick={() => setSelectedCategory('all')}
-                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white dark:bg-slate-900/80 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-400 dark:hover:border-amber-500 text-slate-800 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 font-orbitron font-semibold text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-sm backdrop-blur-md hover:scale-105 transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-300 font-semibold rounded-xl transition-all duration-300 hover:border-slate-300 dark:hover:border-slate-600 flex items-center justify-center gap-2"
               >
-                EXPLORE PRODUCTS <ArrowRight className="w-4 h-4" />
+                View Catalog <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            {/* Trust Specs Metrics */}
-            <div className="pt-8 border-t border-slate-200 dark:border-slate-800/80 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 text-left">
-              <div>
-                <span className="font-orbitron font-bold text-xl sm:text-2xl text-amber-500 dark:text-amber-400 block">PREMIUM</span>
-                <span className="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-rajdhani font-semibold">QUALITY</span>
-              </div>
-              <div>
-                <span className="font-orbitron font-bold text-xl sm:text-2xl text-amber-600 dark:text-amber-300 block">SMART</span>
-                <span className="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-rajdhani font-semibold">DESIGN</span>
-              </div>
-              <div>
-                <span className="font-orbitron font-bold text-xl sm:text-2xl text-emerald-600 dark:text-emerald-400 block">100%</span>
-                <span className="text-[11px] text-slate-500 dark:text-slate-400 uppercase font-rajdhani font-semibold">GENUINE</span>
-              </div>
+            {/* Trust Indicators */}
+            <div className="pt-8 grid grid-cols-3 gap-6 border-t border-slate-200 dark:border-slate-800">
+              {[
+                { icon: Truck, label: 'Free Shipping', sub: 'Orders AED 200+' },
+                { icon: ShieldCheck, label: '1 Year Warranty', sub: 'On All Products' },
+                { icon: Star, label: '4.9 Rating', sub: 'Customer Reviews' },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-slate-700 dark:text-slate-300" />
+                  </div>
+                  <p className="font-semibold text-sm text-slate-900 dark:text-white">{item.label}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{item.sub}</p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Right Image Setup Column */}
+          {/* Right Image Column */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 relative"
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="relative"
           >
-            <div className="relative z-10 rounded-3xl p-3 bg-gradient-to-b from-amber-100/60 via-slate-100/50 to-amber-100/60 dark:from-amber-500/20 dark:via-slate-800/30 dark:to-amber-500/10 border border-amber-200 dark:border-amber-500/30 shadow-2xl backdrop-blur-xl group">
-              <img
-                src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=1000&q=80"
-                alt="Tech Setup Laptop"
-                className="w-full h-auto rounded-2xl object-cover shadow-2xl group-hover:scale-[1.02] transition-transform duration-500"
-              />
-
-              {/* Floating Spec Badge 1 */}
-              <div className="absolute -top-4 -left-4 bg-white/95 dark:bg-slate-900/90 border border-slate-200 dark:border-amber-500/40 backdrop-blur-md rounded-2xl p-3 shadow-xl flex items-center gap-3 hidden sm:flex">
-                <div className="p-2 rounded-xl bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400">
-                  <Cpu className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase">SMART ACCESSORIES</p>
-                  <p className="text-xs font-extrabold text-slate-900 dark:text-white">Designed for Every Setup</p>
-                </div>
+            <div className="relative">
+              {/* Main Image */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-black/30">
+                <img
+                  src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=1200&q=80"
+                  alt="Premium Computer Setup"
+                  className="w-full h-auto object-cover"
+                />
+                {/* Subtle overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
               </div>
 
-              {/* Floating Spec Badge 2 */}
-              <div className="absolute -bottom-4 -right-4 bg-white/95 dark:bg-slate-900/90 border border-slate-200 dark:border-amber-500/40 backdrop-blur-md rounded-2xl p-3 shadow-xl flex items-center gap-3 hidden sm:flex">
-                <div className="p-2 rounded-xl bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400">
-                  <Shield className="w-5 h-5" />
+              {/* Floating Product Card */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
+                className="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-200 dark:border-slate-800 max-w-[200px]"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center">
+                    <ShoppingBag className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm text-slate-900 dark:text-white">2,500+</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Products</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase">TRUSTED QUALITY</p>
-                  <p className="text-xs font-extrabold text-slate-900 dark:text-white">Warranty Included</p>
-                </div>
-              </div>
+              </motion.div>
+
+              {/* Floating Deal Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="absolute -top-4 -right-4 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-2xl px-5 py-3 shadow-lg"
+              >
+                <p className="text-white font-bold text-sm">Up to 30% OFF</p>
+                <p className="text-white/80 text-xs">Limited Time</p>
+              </motion.div>
             </div>
           </motion.div>
 

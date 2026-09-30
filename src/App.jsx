@@ -30,7 +30,7 @@ function AppLayout() {
   const isAdminRoute = location.pathname.startsWith('/admin');
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-[#090d16] text-slate-900 dark:text-slate-100 transition-colors duration-200">
+    <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-[#050a10] text-slate-900 dark:text-slate-100 transition-colors duration-200">
       <Navbar />
       <main className="flex-grow flex flex-col min-h-0">
         <Routes>
@@ -48,7 +48,7 @@ function AppLayout() {
           <Route path="/orders" element={<OrdersPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          
+
           {/* Admin Routes — super admin only */}
           <Route path="/admin" element={<AdminRoute><AdminDashboardPage /></AdminRoute>} />
           <Route path="/admin/products" element={<AdminRoute><AdminProductsPage /></AdminRoute>} />
