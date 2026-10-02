@@ -9,12 +9,12 @@ export const HeroSection = () => {
   const { setSelectedCategory } = useShop();
 
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[#050a10]">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-cyan-50/30 to-slate-100 dark:from-[#050a10] dark:via-cyan-950/20 dark:to-[#050a10]">
       {/* Tech Background */}
       <TechBackground />
 
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-[#050a10] dark:via-[#0a1220] dark:to-[#050a10]" />
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/50 dark:from-slate-900/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[90vh] py-16 lg:py-24">
@@ -41,7 +41,7 @@ export const HeroSection = () => {
             <h1 className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-slate-900 dark:text-white leading-tight">
               Premium{' '}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-600 via-cyan-500 to-violet-600 bg-clip-text text-transparent">
                   Computer
                 </span>
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
@@ -49,13 +49,16 @@ export const HeroSection = () => {
                   <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#06b6d4"/>
+                      <stop offset="50%" stopColor="#06b6d4"/>
                       <stop offset="100%" stopColor="#8b5cf6"/>
                     </linearGradient>
                   </defs>
                 </svg>
               </span>
               <br />
-              Accessories
+              <span className="bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+                Accessories
+              </span>
             </h1>
 
             {/* Subtitle */}
@@ -68,7 +71,7 @@ export const HeroSection = () => {
               <Link
                 to="/shop"
                 onClick={() => setSelectedCategory('all')}
-                className="w-full sm:w-auto px-8 py-4 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 dark:hover:shadow-cyan-500/30 hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-2 group"
               >
                 <ShoppingBag className="w-5 h-5 transition-transform group-hover:scale-110" />
                 Shop Now

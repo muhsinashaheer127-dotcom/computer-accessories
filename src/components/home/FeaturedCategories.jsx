@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { CATEGORIES } from '../../data/products';
 import { useShop } from '../../context/ShopContext';
 import { ArrowRight } from 'lucide-react';
-import { TechBackground } from './TechBackground';
 
 const CATEGORY_IMAGES = {
   laptops: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80',
@@ -35,9 +34,8 @@ export const FeaturedCategories = () => {
   const { setSelectedCategory } = useShop();
 
   return (
-    <section className="py-20 bg-slate-50 dark:bg-[#050a10] relative overflow-hidden">
-      <TechBackground />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-20 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-[#050a10] dark:to-slate-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">

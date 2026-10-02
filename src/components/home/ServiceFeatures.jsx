@@ -1,6 +1,5 @@
 import React from 'react';
 import { ShieldCheck, Truck, RotateCcw, Headphones, Star, Award } from 'lucide-react';
-import { TechBackground } from './TechBackground';
 
 const FEATURES = [
   {
@@ -37,9 +36,8 @@ const FEATURES = [
 
 export const ServiceFeatures = () => {
   return (
-    <section className="py-20 bg-white dark:bg-[#050a10] relative overflow-hidden">
-      <TechBackground />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-20 bg-white dark:bg-[#050a10]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="text-center mb-12 space-y-3">

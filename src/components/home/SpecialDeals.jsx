@@ -3,7 +3,6 @@ import { PRODUCTS } from '../../data/products';
 import { ProductCard } from '../common/ProductCard';
 import { Link } from 'react-router-dom';
 import { Clock, ArrowRight } from 'lucide-react';
-import { TechBackground } from './TechBackground';
 
 const useCountdown = (targetHours) => {
   const end = Date.now() + targetHours * 3600000;
@@ -32,9 +31,8 @@ export const SpecialDeals = () => {
   const [h, m, s] = useCountdown(12);
 
   return (
-    <section className="py-20 bg-white dark:bg-[#050a10] relative overflow-hidden">
-      <TechBackground />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-20 bg-white dark:bg-[#050a10]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
