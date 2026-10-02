@@ -10,7 +10,7 @@ import { NewsletterSection } from '../components/home/NewsletterSection';
 
 export const HomePage = () => {
   return (
-    <div className="space-y-0">
+    <div className="tech-homepage space-y-0">
       <HeroSection />
       <ServiceFeatures />
       <FeaturedCategories />

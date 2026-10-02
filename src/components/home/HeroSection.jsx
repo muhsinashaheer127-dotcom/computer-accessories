@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ShoppingBag, ArrowRight, Star, Truck, ShieldCheck } from 'lucide-react';
@@ -14,7 +13,7 @@ export const HeroSection = () => {
       <TechBackground />
 
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/50 dark:from-slate-900/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 dark:from-slate-900/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[90vh] py-16 lg:py-24">
