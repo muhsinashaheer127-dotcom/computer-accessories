@@ -6,7 +6,8 @@ export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('buraqastar_theme') || localStorage.getItem('techverse_theme');
     if (saved) return saved === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Default to light mode for first-time visitors
+    return false;
   });
 
   useEffect(() => {

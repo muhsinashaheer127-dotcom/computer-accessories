@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Truck, RotateCcw, Headphones, Star, Award } from 'lucide-react';
+import { TechBackground } from './TechBackground';
 
 const FEATURES = [
   {
@@ -36,8 +37,9 @@ const FEATURES = [
 
 export const ServiceFeatures = () => {
   return (
-    <section className="py-20 bg-white dark:bg-[#050a10]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-white dark:bg-[#050a10] relative overflow-hidden">
+      <TechBackground />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="text-center mb-12 space-y-3">
@@ -54,13 +56,13 @@ export const ServiceFeatures = () => {
           {FEATURES.map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="group p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500 dark:hover:border-cyan-500/50 hover:shadow-lg transition-all duration-300"
+              className="group p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-cyan-500 dark:hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/10 dark:hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02]"
             >
-              <div className="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 group-hover:bg-cyan-200 dark:group-hover:bg-cyan-800/50 group-hover:shadow-lg group-hover:shadow-cyan-500/30">
                 <Icon className="w-6 h-6" />
               </div>
-              <h3 className="font-semibold text-lg text-slate-900 dark:text-white mb-2">{title}</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{desc}</p>
+              <h3 className="font-semibold text-lg text-slate-900 dark:text-white mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">{title}</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors">{desc}</p>
             </div>
           ))}
         </div>

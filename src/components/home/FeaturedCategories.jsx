@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CATEGORIES } from '../../data/products';
 import { useShop } from '../../context/ShopContext';
 import { ArrowRight } from 'lucide-react';
+import { TechBackground } from './TechBackground';
 
 const CATEGORY_IMAGES = {
   laptops: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80',
@@ -34,8 +35,9 @@ export const FeaturedCategories = () => {
   const { setSelectedCategory } = useShop();
 
   return (
-    <section className="py-20 bg-slate-50 dark:bg-[#050a10]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-slate-50 dark:bg-[#050a10] relative overflow-hidden">
+      <TechBackground />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
@@ -63,17 +65,19 @@ export const FeaturedCategories = () => {
               key={cat.id}
               to="/shop"
               onClick={() => setSelectedCategory(cat.id)}
-              className="group bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 hover:border-cyan-500 dark:hover:border-cyan-500/50 hover:shadow-lg transition-all duration-300"
+              className="group bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 hover:border-cyan-500 dark:hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/10 dark:hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03]"
             >
               <div className="relative h-32 mb-3 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800">
                 <img
                   src={CATEGORY_IMAGES[cat.id] || cat.image}
                   alt={cat.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-2 transition-transform duration-500 ease-out"
                 />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <h3 className="font-semibold text-sm text-slate-900 dark:text-white mb-1">{cat.name}</h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <h3 className="font-semibold text-sm text-slate-900 dark:text-white mb-1 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">{cat.name}</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
                 {CATEGORY_DESCRIPTIONS[cat.id] || `${cat.count} products`}
               </p>
             </Link>

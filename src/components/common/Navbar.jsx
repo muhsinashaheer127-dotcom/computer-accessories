@@ -65,10 +65,10 @@ export const Navbar = () => {
   ];
 
   const navLinkClass = (path) =>
-    `px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+    `px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
       location.pathname === path
-        ? 'text-cyan-600 dark:text-cyan-400 bg-cyan-100 dark:bg-cyan-500/10 border border-cyan-300 dark:border-cyan-500/20 font-semibold'
-        : 'text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-white/5'
+        ? 'text-cyan-600 dark:text-cyan-400 bg-cyan-100 dark:bg-cyan-500/10 border border-cyan-300 dark:border-cyan-500/20 font-semibold shadow-md shadow-cyan-500/20'
+        : 'text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:scale-105 hover:shadow-md'
     }`;
 
   return (
@@ -89,13 +89,13 @@ export const Navbar = () => {
               <img
                 src="/logo-emblem.png"
                 alt="BURAQA STAR"
-                className="h-9 w-auto object-contain drop-shadow-sm group-hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.6)] transition-all duration-300"
+                className="h-9 w-auto object-contain drop-shadow-sm group-hover:drop-shadow-[0_0_12px_rgba(6,182,212,0.8)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
               />
               <div className="flex flex-col">
-                <span className="font-display font-bold text-base text-slate-900 dark:text-white tracking-tight leading-none group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
-                  BURAQA <span className="text-cyan-600 dark:text-cyan-400">STAR</span>
+                <span className="font-display font-bold text-base text-slate-900 dark:text-white tracking-tight leading-none group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors group-hover:tracking-wide">
+                  BURAQA <span className="text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-500 dark:group-hover:text-cyan-300">STAR</span>
                 </span>
-                <span className="text-[9px] font-medium text-slate-500 tracking-widest uppercase mt-0.5">
+                <span className="text-[9px] font-medium text-slate-500 tracking-widest uppercase mt-0.5 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
                   Computer Trading LLC
                 </span>
               </div>
@@ -123,7 +123,7 @@ export const Navbar = () => {
                   <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
                 </Link>
 
-                <div className="absolute left-0 top-full mt-0 w-56 bg-white dark:bg-[#070d18] border border-slate-200 dark:border-cyan-500/20 rounded-2xl shadow-2xl shadow-cyan-500/10 p-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="absolute left-0 top-full mt-0 w-56 bg-white dark:bg-[#070d18] border border-slate-200 dark:border-cyan-500/20 rounded-2xl shadow-2xl shadow-cyan-500/10 p-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 group-hover:translate-y-1">
                   {categories.map((item) => {
                     const Icon = item.icon;
                     return (
@@ -131,9 +131,9 @@ export const Navbar = () => {
                         key={item.cat}
                         to="/shop"
                         onClick={() => setSelectedCategory(item.cat)}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-600 dark:text-slate-400 hover:bg-cyan-100 dark:hover:bg-cyan-500/10 hover:text-cyan-600 dark:hover:text-cyan-300 transition-all group"
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-slate-600 dark:text-slate-400 hover:bg-cyan-100 dark:hover:bg-cyan-500/10 hover:text-cyan-600 dark:hover:text-cyan-300 transition-all duration-200 hover:scale-105 hover:translate-x-1 group/item"
                       >
-                        <Icon className="w-4 h-4 text-slate-400 dark:text-slate-600 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors" />
+                        <Icon className="w-4 h-4 text-slate-400 dark:text-slate-600 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors group-hover/item:scale-110 group-hover/item:rotate-12" />
                         {item.name}
                       </Link>
                     );
@@ -171,7 +171,7 @@ export const Navbar = () => {
               {/* Search */}
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2 rounded-xl text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/10 transition-all"
+                className="p-2 rounded-xl text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/10 transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-cyan-500/20"
                 title="Search"
               >
                 <Search className="w-5 h-5" />
@@ -180,7 +180,7 @@ export const Navbar = () => {
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-xl text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/10 transition-all"
+                className="p-2 rounded-xl text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/10 transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-md hover:shadow-cyan-500/20"
                 title="Toggle theme"
               >
                 {isDark ? <Sun className="w-5 h-5 text-cyan-400" /> : <Moon className="w-5 h-5 text-cyan-600" />}
@@ -189,12 +189,12 @@ export const Navbar = () => {
               {/* Wishlist */}
               <Link
                 to="/wishlist"
-                className="relative p-2 rounded-xl text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/10 transition-all"
+                className="relative p-2 rounded-xl text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/10 transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-cyan-500/20"
                 title="Wishlist"
               >
                 <Heart className="w-5 h-5" />
                 {wishlist.length > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-cyan-500 text-slate-950 font-black text-[10px] rounded-full flex items-center justify-center shadow-sm shadow-cyan-500/50">
+                  <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-cyan-500 text-slate-950 font-black text-[10px] rounded-full flex items-center justify-center shadow-sm shadow-cyan-500/50 animate-pulse">
                     {wishlist.length}
                   </span>
                 )}
@@ -203,12 +203,12 @@ export const Navbar = () => {
               {/* Cart */}
               <Link
                 to="/cart"
-                className="relative p-2 rounded-xl text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/10 transition-all"
+                className="relative p-2 rounded-xl text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/10 transition-all duration-300 hover:scale-110 hover:shadow-md hover:shadow-cyan-500/20"
                 title="Cart"
               >
                 <ShoppingBag className="w-5 h-5" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-cyan-500 text-slate-950 font-black text-[10px] rounded-full flex items-center justify-center shadow-sm shadow-cyan-500/50">
+                  <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-cyan-500 text-slate-950 font-black text-[10px] rounded-full flex items-center justify-center shadow-sm shadow-cyan-500/50 animate-pulse">
                     {cartCount}
                   </span>
                 )}
@@ -232,23 +232,23 @@ export const Navbar = () => {
                           <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">{user.name}</p>
                           <p className="text-xs text-slate-500 truncate">{user.email}</p>
                         </div>
-                        <Link to="/profile" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-600 dark:text-slate-400 hover:bg-cyan-100 dark:hover:bg-cyan-500/10 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">
-                          <User className="w-4 h-4" /> My Profile
+                        <Link to="/profile" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-600 dark:text-slate-400 hover:bg-cyan-100 dark:hover:bg-cyan-500/10 hover:text-cyan-600 dark:hover:text-cyan-300 transition-all duration-200 hover:scale-105 hover:translate-x-1">
+                          <User className="w-4 h-4 transition-transform hover:scale-110" /> My Profile
                         </Link>
-                        <Link to="/orders" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-600 dark:text-slate-400 hover:bg-cyan-100 dark:hover:bg-cyan-500/10 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">
-                          <Package className="w-4 h-4" /> My Orders
+                        <Link to="/orders" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-600 dark:text-slate-400 hover:bg-cyan-100 dark:hover:bg-cyan-500/10 hover:text-cyan-600 dark:hover:text-cyan-300 transition-all duration-200 hover:scale-105 hover:translate-x-1">
+                          <Package className="w-4 h-4 transition-transform hover:scale-110" /> My Orders
                         </Link>
                         {isAdmin && (
-                          <Link to="/admin" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-cyan-600 dark:text-cyan-400 font-medium hover:bg-cyan-100 dark:hover:bg-cyan-500/10 transition-colors">
-                            <LayoutDashboard className="w-4 h-4" /> Admin Panel
+                          <Link to="/admin" onClick={() => setIsUserMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2 text-sm text-cyan-600 dark:text-cyan-400 font-medium hover:bg-cyan-100 dark:hover:bg-cyan-500/10 transition-all duration-200 hover:scale-105 hover:translate-x-1">
+                            <LayoutDashboard className="w-4 h-4 transition-transform hover:scale-110" /> Admin Panel
                           </Link>
                         )}
                         <div className="border-t border-slate-200 dark:border-white/5 mt-1 pt-1">
                           <button
                             onClick={() => { logout(); setIsUserMenuOpen(false); }}
-                            className="w-full flex items-center gap-2.5 px-4 py-2 text-sm text-red-500 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-500/10 transition-colors"
+                            className="w-full flex items-center gap-2.5 px-4 py-2 text-sm text-red-500 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-500/10 transition-all duration-200 hover:scale-105"
                           >
-                            <LogOut className="w-4 h-4" /> Sign Out
+                            <LogOut className="w-4 h-4 transition-transform hover:scale-110" /> Sign Out
                           </button>
                         </div>
                       </div>
@@ -257,9 +257,9 @@ export const Navbar = () => {
                 ) : (
                   <Link
                     to="/login"
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition-all shadow-md shadow-cyan-500/20 hover:shadow-cyan-400/30"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition-all duration-300 shadow-md shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 hover:scale-105"
                   >
-                    <User className="w-4 h-4" />
+                    <User className="w-4 h-4 transition-transform hover:scale-110" />
                     <span className="hidden sm:inline">Sign In</span>
                   </Link>
                 )}

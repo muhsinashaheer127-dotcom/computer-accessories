@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ShoppingBag, ArrowRight, Star, Truck, ShieldCheck } from 'lucide-react';
 import { useShop } from '../../context/ShopContext';
+import { TechBackground } from './TechBackground';
 
 export const HeroSection = () => {
   const { setSelectedCategory } = useShop();
 
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#050a10]">
+      {/* Tech Background */}
+      <TechBackground />
+
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-[#050a10] dark:via-[#0a1220] dark:to-[#050a10]" />
 
@@ -64,18 +68,18 @@ export const HeroSection = () => {
               <Link
                 to="/shop"
                 onClick={() => setSelectedCategory('all')}
-                className="w-full sm:w-auto px-8 py-4 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20 dark:hover:shadow-cyan-500/30 hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-2 group"
               >
-                <ShoppingBag className="w-5 h-5" />
+                <ShoppingBag className="w-5 h-5 transition-transform group-hover:scale-110" />
                 Shop Now
               </Link>
 
               <Link
                 to="/shop"
                 onClick={() => setSelectedCategory('all')}
-                className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-300 font-semibold rounded-xl transition-all duration-300 hover:border-slate-300 dark:hover:border-slate-600 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-300 font-semibold rounded-xl transition-all duration-300 hover:border-cyan-500 dark:hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-2 group"
               >
-                View Catalog <ArrowRight className="w-4 h-4" />
+                View Catalog <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
 
@@ -91,13 +95,14 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + index * 0.1 }}
-                  className="text-center"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="text-center cursor-pointer group"
                 >
-                  <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-slate-700 dark:text-slate-300" />
+                  <div className="w-10 h-10 mx-auto mb-2 rounded-lg bg-slate-100 dark:bg-slate-800/50 flex items-center justify-center transition-all duration-300 group-hover:bg-cyan-100 dark:group-hover:bg-cyan-900/30 group-hover:shadow-lg group-hover:shadow-cyan-500/20">
+                    <item.icon className="w-5 h-5 text-slate-700 dark:text-slate-300 transition-colors group-hover:text-cyan-600 dark:group-hover:text-cyan-400" />
                   </div>
-                  <p className="font-semibold text-sm text-slate-900 dark:text-white">{item.label}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{item.sub}</p>
+                  <p className="font-semibold text-sm text-slate-900 dark:text-white transition-colors group-hover:text-cyan-600 dark:group-hover:text-cyan-400">{item.label}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 transition-colors group-hover:text-slate-600 dark:group-hover:text-slate-300">{item.sub}</p>
                 </motion.div>
               ))}
             </div>
@@ -127,10 +132,11 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}
-                className="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-200 dark:border-slate-800 max-w-[200px]"
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-200 dark:border-slate-800 max-w-[200px] cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center transition-colors hover:bg-cyan-200 dark:hover:bg-cyan-800/50">
                     <ShoppingBag className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
                   </div>
                   <div>
@@ -145,7 +151,8 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
-                className="absolute -top-4 -right-4 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-2xl px-5 py-3 shadow-lg"
+                whileHover={{ scale: 1.1, rotate: 2 }}
+                className="absolute -top-4 -right-4 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-2xl px-5 py-3 shadow-lg cursor-pointer hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300"
               >
                 <p className="text-white font-bold text-sm">Up to 30% OFF</p>
                 <p className="text-white/80 text-xs">Limited Time</p>

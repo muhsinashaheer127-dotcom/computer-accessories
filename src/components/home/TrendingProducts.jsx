@@ -4,14 +4,16 @@ import { PRODUCTS } from '../../data/products';
 import { ProductCard } from '../common/ProductCard';
 import { ArrowRight } from 'lucide-react';
 import { useShop } from '../../context/ShopContext';
+import { TechBackground } from './TechBackground';
 
 export const TrendingProducts = () => {
   const { setSelectedCategory } = useShop();
   const featured = PRODUCTS.filter((p) => p.isFeatured).slice(0, 8);
 
   return (
-    <section className="py-20 bg-slate-50 dark:bg-[#050a10]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-slate-50 dark:bg-[#050a10] relative overflow-hidden">
+      <TechBackground />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
