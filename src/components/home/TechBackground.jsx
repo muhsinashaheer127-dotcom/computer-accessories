@@ -7,8 +7,8 @@ export const TechBackground = () => {
       <div className="absolute inset-0 opacity-10 dark:opacity-20">
         <div className="w-full h-full" style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(6, 182, 212, 0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(6, 182, 212, 0.1) 1px, transparent 1px)
+            linear-gradient(to right, rgba(14, 165, 233, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(14, 165, 233, 0.1) 1px, transparent 1px)
           `,
           backgroundSize: '60px 60px',
         }} />

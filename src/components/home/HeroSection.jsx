@@ -9,7 +9,7 @@ export const HeroSection = () => {
   const { setSelectedCategory } = useShop();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-cyan-50/30 to-slate-100 dark:from-[#050a10] dark:via-cyan-950/20 dark:to-[#050a10]">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-cyan-50/30 to-slate-100 dark:from-[#0f1629] dark:via-cyan-950/20 dark:to-[#0f1629]">
       {/* Tech Background */}
       <TechBackground />
 
@@ -48,9 +48,9 @@ export const HeroSection = () => {
                   <path d="M2 10C50 2 150 2 198 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
                   <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#06b6d4"/>
-                      <stop offset="50%" stopColor="#06b6d4"/>
-                      <stop offset="100%" stopColor="#8b5cf6"/>
+                      <stop offset="0%" stopColor="#0ea5e9"/>
+                      <stop offset="50%" stopColor="#0ea5e9"/>
+                      <stop offset="100%" stopColor="#14b8a6"/>
                     </linearGradient>
                   </defs>
                 </svg>
@@ -97,7 +97,7 @@ export const HeroSection = () => {
                   key={item.label}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
+                  transition={{ delay: isMobile ? 0.1 + index * 0.05 : 0.4 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -2 }}
                   className="text-center cursor-pointer group"
                 >
@@ -115,7 +115,7 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: isMobile ? 0.4 : 0.8, delay: isMobile ? 0.1 : 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
             <div className="relative">
@@ -125,6 +125,8 @@ export const HeroSection = () => {
                   src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=1200&q=80"
                   alt="Premium Computer Setup"
                   className="w-full h-auto object-cover"
+                  loading="eager"
+                  fetchPriority="high"
                 />
                 {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
@@ -134,8 +136,8 @@ export const HeroSection = () => {
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ delay: isMobile ? 0.2 : 0.6 }}
+                whileHover={{ scale: isMobile ? 1.02 : 1.05, y: isMobile ? -2 : -5 }}
                 className="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 rounded-2xl p-4 shadow-xl border border-slate-200 dark:border-slate-800 max-w-[200px] cursor-pointer hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300"
               >
                 <div className="flex items-center gap-3">
@@ -153,8 +155,8 @@ export const HeroSection = () => {
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                whileHover={{ scale: 1.1, rotate: 2 }}
+                transition={{ delay: isMobile ? 0.3 : 0.8 }}
+                whileHover={{ scale: isMobile ? 1.05 : 1.1, rotate: isMobile ? 1 : 2 }}
                 className="absolute -top-4 -right-4 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-2xl px-5 py-3 shadow-lg cursor-pointer hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300"
               >
                 <p className="text-white font-bold text-sm">Up to 30% OFF</p>

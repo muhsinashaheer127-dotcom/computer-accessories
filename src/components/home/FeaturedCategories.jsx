@@ -34,7 +34,7 @@ export const FeaturedCategories = () => {
   const { setSelectedCategory } = useShop();
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-[#050a10] dark:to-slate-900">
+    <section className="py-20 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-[#0f1629] dark:to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -63,18 +63,19 @@ export const FeaturedCategories = () => {
               key={cat.id}
               to="/shop"
               onClick={() => setSelectedCategory(cat.id)}
-              className="group bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 hover:border-cyan-500 dark:hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/10 dark:hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03]"
+              className="group bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 hover:border-brand-500 dark:hover:border-brand-500/50 hover:shadow-xl hover:shadow-brand-500/10 dark:hover:shadow-brand-500/20 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03]"
             >
               <div className="relative h-32 mb-3 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800">
                 <img
                   src={CATEGORY_IMAGES[cat.id] || cat.image}
                   alt={cat.name}
                   className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-2 transition-transform duration-500 ease-out"
+                  loading="lazy"
                 />
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <h3 className="font-semibold text-sm text-slate-900 dark:text-white mb-1 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">{cat.name}</h3>
+              <h3 className="font-semibold text-sm text-slate-900 dark:text-white mb-1 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{cat.name}</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
                 {CATEGORY_DESCRIPTIONS[cat.id] || `${cat.count} products`}
               </p>
