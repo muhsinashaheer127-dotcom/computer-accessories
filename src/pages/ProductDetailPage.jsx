@@ -47,6 +47,10 @@ export const ProductDetailPage = () => {
     navigate('/cart');
   };
 
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+  };
+
   const relatedProducts = products
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
