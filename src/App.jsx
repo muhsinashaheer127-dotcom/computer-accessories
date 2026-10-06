@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { ToastProvider } from './context/ToastContext';
 import { AuthProvider } from './context/AuthContext';
@@ -62,6 +63,16 @@ function AppLayout() {
   );
 }
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   return (
     <ThemeProvider>
@@ -69,6 +80,7 @@ function App() {
         <AuthProvider>
           <ShopProvider>
             <Router>
+              <ScrollToTop />
               <AppLayout />
             </Router>
           </ShopProvider>
