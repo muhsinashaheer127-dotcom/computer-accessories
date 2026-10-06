@@ -31,11 +31,11 @@ export const SpecialDeals = () => {
   const [h, m, s] = useCountdown(12);
 
   return (
-    <section className="py-20 bg-white dark:bg-[#050a10]">
+    <section className="py-16 bg-white dark:bg-[#050a10]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-10">
           <div className="space-y-2">
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white">
               Special Deals
@@ -70,9 +70,9 @@ export const SpecialDeals = () => {
         <div className="mt-10 text-center">
           <Link
             to="/shop"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors group"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
           >
-            View all deals <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            View all deals <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
